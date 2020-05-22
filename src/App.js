@@ -1,19 +1,33 @@
 import React from 'react';
 import './App.css';
 import DragNDrop from './components/DragNDrop'
+import Data from './services/api'
+import { FiGithub, FiInstagram } from 'react-icons/fi'
 
-const data = [
-   {title: 'group 1', items: ['1', '2', '3','4']},
-   {title: 'group 2', items: ['5', '6', '7']},
-   {title: 'group 3', items: ['8', '9', '10']}
-  ]
+const data = Data()
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <DragNDrop data={data} />
+        <div className="Header-box">
+          <div className="logo">
+            Post-it
+          </div>
+          <div className="Social">
+            <div className="git-hub">
+               <a href="https://github.com/Joaopedromata"><FiGithub size={24} color="#FFF" /></a> 
+            </div>
+            <div className="insta">
+                <a external href="https://www.instagram.com/poxajoao__/"> <FiInstagram size={24} color="#FFF" /></a>  
+            </div>
+          </div>
+        </div>
       </header>
+      <div className="container">
+        <DragNDrop data={data} />
+      </div>
+
                    
     </div>
   );

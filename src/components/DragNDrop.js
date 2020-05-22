@@ -58,6 +58,7 @@ function DragNDrop({data}){
             onDragEnter={dragging && !grp.items.length?(e) => handleDragEnter(e,{grpI, itemI: 0}):null}
             >
             <div className="group-title">{grp.title}</div>
+            
               {grp.items.map((item, itemI) => (
                 <div 
                     draggable
@@ -66,6 +67,7 @@ function DragNDrop({data}){
                     key={item} 
                     className={dragging ? getStyles({grpI, itemI}) : "dnd-item"}
                 >
+               
                   {item}
                 </div>
               ))}
